@@ -3,5 +3,6 @@
   "header": "http://localhost:4202/mf-manifest.json",
   "footer": "http://localhost:4203/mf-manifest.json",
   "navbar": "http://localhost:4204/mf-manifest.json",
-  "hero": "http://localhost:4205/mf-manifest.json"
+  "hero": "http://localhost:4205/mf-manifest.json",
+  "features": "http://localhost:4206/mf-manifest.json"
 }
