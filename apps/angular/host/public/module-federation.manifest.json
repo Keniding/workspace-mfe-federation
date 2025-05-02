@@ -4,5 +4,9 @@
   "footer": "http://localhost:4203/mf-manifest.json",
   "navbar": "http://localhost:4204/mf-manifest.json",
   "hero": "http://localhost:4205/mf-manifest.json",
-  "features": "http://localhost:4206/mf-manifest.json"
+  "features": "http://localhost:4206/mf-manifest.json",
+  "landing": "http://localhost:4207/mf-manifest.json",
+  "iaconsultant": "http://localhost:4208/mf-manifest.json",
+  "petprofile": "http://localhost:4209/mf-manifest.json",
+  "appointment": "http://localhost:4210/mf-manifest.json"
 }

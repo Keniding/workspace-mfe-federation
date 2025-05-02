@@ -4,6 +4,34 @@ import { loadRemote } from '@module-federation/enhanced/runtime';
 
 export const appRoutes: Route[] = [
   {
+    path: 'appointment',
+    loadChildren: () =>
+      loadRemote<typeof import('appointment/Routes')>(
+        'appointment/Routes'
+      ).then((m) => m!.remoteRoutes),
+  },
+  {
+    path: 'petprofile',
+    loadChildren: () =>
+      loadRemote<typeof import('petprofile/Routes')>('petprofile/Routes').then(
+        (m) => m!.remoteRoutes
+      ),
+  },
+  {
+    path: 'iaconsultant',
+    loadChildren: () =>
+      loadRemote<typeof import('iaconsultant/Routes')>(
+        'iaconsultant/Routes'
+      ).then((m) => m!.remoteRoutes),
+  },
+  {
+    path: 'landing',
+    loadChildren: () =>
+      loadRemote<typeof import('landing/Routes')>('landing/Routes').then(
+        (m) => m!.remoteRoutes
+      ),
+  },
+  {
     path: 'features',
     loadChildren: () =>
       loadRemote<typeof import('features/Routes')>('features/Routes').then(

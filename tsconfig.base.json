@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "appointment/Routes": [
+        "apps/angular/plugins/features/src/app/appointment/src/app/remote-entry/entry.routes.ts"
+      ],
       "features/Routes": [
         "apps/angular/plugins/features/src/app/remote-entry/entry.routes.ts"
       ],
@@ -27,11 +30,20 @@
       "hero/Routes": [
         "apps/angular/plugins/layout/src/app/hero/src/app/remote-entry/entry.routes.ts"
       ],
+      "iaconsultant/Routes": [
+        "apps/angular/plugins/features/src/app/iaconsultant/src/app/remote-entry/entry.routes.ts"
+      ],
+      "landing/Routes": [
+        "apps/angular/plugins/features/src/app/landing/src/app/remote-entry/entry.routes.ts"
+      ],
       "layout/Routes": [
         "apps/angular/plugins/layout/src/app/remote-entry/entry.routes.ts"
       ],
       "navbar/Routes": [
         "apps/angular/plugins/layout/src/app/navbar/src/app/remote-entry/entry.routes.ts"
+      ],
+      "petprofile/Routes": [
+        "apps/angular/plugins/features/src/app/petprofile/src/app/remote-entry/entry.routes.ts"
       ]
     }
   },
