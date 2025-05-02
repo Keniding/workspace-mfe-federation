@@ -15,6 +15,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@workspace-mfe-federation/atoms": [
+        "apps/angular/libs/shared/ui/atoms/src/index.ts"
+      ],
+      "@workspace-mfe-federation/molecules": [
+        "apps/angular/libs/shared/ui/molecules/src/index.ts"
+      ],
+      "@workspace-mfe-federation/organisms": [
+        "apps/angular/libs/shared/ui/organisms/src/index.ts"
+      ],
       "appointment/Routes": [
         "apps/angular/plugins/features/src/app/appointment/src/app/remote-entry/entry.routes.ts"
       ],

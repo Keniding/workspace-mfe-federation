@@ -1,0 +1,36 @@
+{
+  "name": "organisms",
+  "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/angular/libs/shared/ui/organisms/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "apps/angular/libs/shared/ui/organisms/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "apps/angular/libs/shared/ui/organisms/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "apps/angular/libs/shared/ui/organisms/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/angular/libs/shared/ui/organisms/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
