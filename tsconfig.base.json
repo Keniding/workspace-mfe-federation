@@ -21,6 +21,9 @@
       "header/Routes": [
         "apps/angular/plugins/layout/src/app/header/src/app/remote-entry/entry.routes.ts"
       ],
+      "hero/Routes": [
+        "apps/angular/plugins/layout/src/app/hero/src/app/remote-entry/entry.routes.ts"
+      ],
       "layout/Routes": [
         "apps/angular/plugins/layout/src/app/remote-entry/entry.routes.ts"
       ],
