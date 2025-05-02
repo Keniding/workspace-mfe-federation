@@ -62,7 +62,14 @@
       ],
       "vetdashboard/Routes": [
         "apps/angular/plugins/dashboards/src/app/vetdashboard/src/app/remote-entry/entry.routes.ts"
-      ]
+      ],
+
+      "@workspace-mfe-federation/domain/interfaces/*": [
+        "apps/angular/libs/domain/interfaces/*"
+      ],
+      "@workspace-mfe-federation/core/plugin-registry/*": [
+        "apps/angular/libs/core/plugin-registry/*"
+      ],
     }
   },
   "exclude": ["node_modules", "tmp"]
