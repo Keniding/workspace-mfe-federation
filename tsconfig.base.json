@@ -15,11 +15,17 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "footer/Routes": [
+        "apps/angular/plugins/layout/src/app/footer/src/app/remote-entry/entry.routes.ts"
+      ],
       "header/Routes": [
         "apps/angular/plugins/layout/src/app/header/src/app/remote-entry/entry.routes.ts"
       ],
       "layout/Routes": [
         "apps/angular/plugins/layout/src/app/remote-entry/entry.routes.ts"
+      ],
+      "navbar/Routes": [
+        "apps/angular/plugins/layout/src/app/navbar/src/app/remote-entry/entry.routes.ts"
       ]
     }
   },

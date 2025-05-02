@@ -4,6 +4,20 @@ import { loadRemote } from '@module-federation/enhanced/runtime';
 
 export const appRoutes: Route[] = [
   {
+    path: 'navbar',
+    loadChildren: () =>
+      loadRemote<typeof import('navbar/Routes')>('navbar/Routes').then(
+        (m) => m!.remoteRoutes
+      ),
+  },
+  {
+    path: 'footer',
+    loadChildren: () =>
+      loadRemote<typeof import('footer/Routes')>('footer/Routes').then(
+        (m) => m!.remoteRoutes
+      ),
+  },
+  {
     path: 'header',
     loadChildren: () =>
       loadRemote<typeof import('header/Routes')>('header/Routes').then(
