@@ -16,13 +16,13 @@
 To run the dev server for your app, use:
 
 ```sh
-npx nx serve app-nx
+npx nx serve host
 ```
 
 To create a production bundle:
 
 ```sh
-npx nx build app-nx
+npx nx build host
 ```
 
 To see all available targets to run for a project, run:

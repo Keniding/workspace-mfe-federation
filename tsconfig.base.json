@@ -25,43 +25,34 @@
         "apps/angular/libs/shared/ui/organisms/src/index.ts"
       ],
       "appointment/Routes": [
-        "apps/angular/plugins/features/src/app/appointment/src/app/remote-entry/entry.routes.ts"
-      ],
-      "dashboards/Routes": [
-        "apps/angular/plugins/dashboards/src/app/remote-entry/entry.routes.ts"
-      ],
-      "features/Routes": [
-        "apps/angular/plugins/features/src/app/remote-entry/entry.routes.ts"
+        "apps/angular/plugins/features/appointment/src/app/remote-entry/entry.routes.ts"
       ],
       "footer/Routes": [
-        "apps/angular/plugins/layout/src/app/footer/src/app/remote-entry/entry.routes.ts"
+        "apps/angular/plugins/layout/footer/src/app/remote-entry/entry.routes.ts"
       ],
       "header/Routes": [
-        "apps/angular/plugins/layout/src/app/header/src/app/remote-entry/entry.routes.ts"
+        "apps/angular/plugins/layout/header/src/app/remote-entry/entry.routes.ts"
       ],
       "hero/Routes": [
-        "apps/angular/plugins/layout/src/app/hero/src/app/remote-entry/entry.routes.ts"
+        "apps/angular/plugins/layout/hero/src/app/remote-entry/entry.routes.ts"
       ],
       "iaconsultant/Routes": [
-        "apps/angular/plugins/features/src/app/iaconsultant/src/app/remote-entry/entry.routes.ts"
+        "apps/angular/plugins/features/iaconsultant/src/app/remote-entry/entry.routes.ts"
       ],
       "landing/Routes": [
-        "apps/angular/plugins/features/src/app/landing/src/app/remote-entry/entry.routes.ts"
-      ],
-      "layout/Routes": [
-        "apps/angular/plugins/layout/src/app/remote-entry/entry.routes.ts"
+        "apps/angular/plugins/features/landing/src/app/remote-entry/entry.routes.ts"
       ],
       "navbar/Routes": [
-        "apps/angular/plugins/layout/src/app/navbar/src/app/remote-entry/entry.routes.ts"
+        "apps/angular/plugins/layout/navbar/src/app/remote-entry/entry.routes.ts"
       ],
       "ownerdashboard/Routes": [
-        "apps/angular/plugins/dashboards/src/app/ownerdashboard/src/app/remote-entry/entry.routes.ts"
+        "apps/angular/plugins/dashboards/ownerdashboard/src/app/remote-entry/entry.routes.ts"
       ],
       "petprofile/Routes": [
-        "apps/angular/plugins/features/src/app/petprofile/src/app/remote-entry/entry.routes.ts"
+        "apps/angular/plugins/features/petprofile/src/app/remote-entry/entry.routes.ts"
       ],
       "vetdashboard/Routes": [
-        "apps/angular/plugins/dashboards/src/app/vetdashboard/src/app/remote-entry/entry.routes.ts"
+        "apps/angular/plugins/dashboards/vetdashboard/src/app/remote-entry/entry.routes.ts"
       ],
 
       "@workspace-mfe-federation/domain/interfaces/*": [

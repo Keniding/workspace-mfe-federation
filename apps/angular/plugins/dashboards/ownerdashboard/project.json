@@ -1,0 +1,113 @@
+{
+  "name": "ownerdashboard",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/angular/plugins/dashboards/ownerdashboard/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/angular/plugins/dashboards/ownerdashboard",
+        "index": "apps/angular/plugins/dashboards/ownerdashboard/src/index.html",
+        "main": "apps/angular/plugins/dashboards/ownerdashboard/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/angular/plugins/dashboards/ownerdashboard/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/angular/plugins/dashboards/ownerdashboard/public"
+          }
+        ],
+        "styles": [
+          "apps/angular/plugins/dashboards/ownerdashboard/src/styles.scss"
+        ],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/angular/plugins/dashboards/ownerdashboard/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/angular/plugins/dashboards/ownerdashboard/webpack.prod.config.ts"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nx/angular:dev-server",
+      "options": {
+        "port": 4213,
+        "publicHost": "http://localhost:4213"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "ownerdashboard:build:production"
+        },
+        "development": {
+          "buildTarget": "ownerdashboard:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "ownerdashboard:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/angular/plugins/dashboards/ownerdashboard/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "ownerdashboard:build",
+        "port": 4213,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ownerdashboard:build:development"
+        },
+        "production": {
+          "buildTarget": "ownerdashboard:build:production"
+        }
+      }
+    }
+  }
+}
