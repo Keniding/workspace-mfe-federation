@@ -18,6 +18,9 @@
       "appointment/Routes": [
         "apps/angular/plugins/features/src/app/appointment/src/app/remote-entry/entry.routes.ts"
       ],
+      "dashboards/Routes": [
+        "apps/angular/plugins/dashboards/src/app/remote-entry/entry.routes.ts"
+      ],
       "features/Routes": [
         "apps/angular/plugins/features/src/app/remote-entry/entry.routes.ts"
       ],

@@ -4,6 +4,13 @@ import { loadRemote } from '@module-federation/enhanced/runtime';
 
 export const appRoutes: Route[] = [
   {
+    path: 'dashboards',
+    loadChildren: () =>
+      loadRemote<typeof import('dashboards/Routes')>('dashboards/Routes').then(
+        (m) => m!.remoteRoutes
+      ),
+  },
+  {
     path: 'appointment',
     loadChildren: () =>
       loadRemote<typeof import('appointment/Routes')>(

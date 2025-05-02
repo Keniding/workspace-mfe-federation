@@ -8,5 +8,6 @@
   "landing": "http://localhost:4207/mf-manifest.json",
   "iaconsultant": "http://localhost:4208/mf-manifest.json",
   "petprofile": "http://localhost:4209/mf-manifest.json",
-  "appointment": "http://localhost:4210/mf-manifest.json"
+  "appointment": "http://localhost:4210/mf-manifest.json",
+  "dashboards": "http://localhost:4211/mf-manifest.json"
 }
