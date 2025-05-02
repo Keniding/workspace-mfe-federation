@@ -45,8 +45,14 @@
       "navbar/Routes": [
         "apps/angular/plugins/layout/src/app/navbar/src/app/remote-entry/entry.routes.ts"
       ],
+      "ownerdashboard/Routes": [
+        "apps/angular/plugins/dashboards/src/app/ownerdashboard/src/app/remote-entry/entry.routes.ts"
+      ],
       "petprofile/Routes": [
         "apps/angular/plugins/features/src/app/petprofile/src/app/remote-entry/entry.routes.ts"
+      ],
+      "vetdashboard/Routes": [
+        "apps/angular/plugins/dashboards/src/app/vetdashboard/src/app/remote-entry/entry.routes.ts"
       ]
     }
   },

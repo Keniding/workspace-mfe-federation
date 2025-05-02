@@ -9,5 +9,7 @@
   "iaconsultant": "http://localhost:4208/mf-manifest.json",
   "petprofile": "http://localhost:4209/mf-manifest.json",
   "appointment": "http://localhost:4210/mf-manifest.json",
-  "dashboards": "http://localhost:4211/mf-manifest.json"
+  "dashboards": "http://localhost:4211/mf-manifest.json",
+  "vetdashboard": "http://localhost:4212/mf-manifest.json",
+  "ownerdashboard": "http://localhost:4213/mf-manifest.json"
 }
