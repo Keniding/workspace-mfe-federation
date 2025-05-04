@@ -1,4 +1,5 @@
 import { PluginManifest, Plugin } from '@workspace-mfe-federation/domain/interfaces/plugin/plugin.interface';
+import { HeaderComponent, MobileHeaderComponent } from '@workspace-mfe-federation/molecules';
 
 export class HeaderPlugin implements Plugin {
   manifest: PluginManifest = {
@@ -9,11 +10,11 @@ export class HeaderPlugin implements Plugin {
     exposedComponents: {
       'header': {
         type: 'component',
-        path: './components/header.component'
+        component: HeaderComponent
       },
       'mobile-header': {
         type: 'component',
-        path: './components/mobile-header.component'
+        component: MobileHeaderComponent
       }
     }
   };

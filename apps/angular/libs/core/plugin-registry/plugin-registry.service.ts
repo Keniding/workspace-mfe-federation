@@ -70,13 +70,22 @@ export class PluginRegistryService {
     const componentInfo = plugin.manifest.exposedComponents[componentKey];
     if (!componentInfo || componentInfo.type !== 'component') return null;
 
-    try {
-      // Carga dinámica del componente
-      const module = await import(/* @vite-ignore */ componentInfo.path);
-      return module.default;
-    } catch (err) {
-      console.error(`Error loading component ${componentKey} from plugin ${pluginId}:`, err);
-      return null;
+    // Si ya tienes el componente directamente, devuélvelo
+    if (componentInfo.component) {
+      return componentInfo.component as Type<T>;
     }
+
+    // Si solo tienes path, mantén la lógica de carga dinámica
+    if (componentInfo.path) {
+      try {
+        const module = await import(componentInfo.path);
+        return module.default;
+      } catch (err) {
+        console.error(`Error loading component ${componentKey} from plugin ${pluginId}:`, err);
+        return null;
+      }
+    }
+
+    return null;
   }
 }

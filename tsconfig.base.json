@@ -18,11 +18,20 @@
       "@workspace-mfe-federation/atoms": [
         "apps/angular/libs/shared/ui/atoms/src/index.ts"
       ],
+      "@workspace-mfe-federation/core/plugin-registry/*": [
+        "apps/angular/libs/core/plugin-registry/*"
+      ],
+      "@workspace-mfe-federation/domain/interfaces/*": [
+        "apps/angular/libs/domain/interfaces/*"
+      ],
       "@workspace-mfe-federation/molecules": [
         "apps/angular/libs/shared/ui/molecules/src/index.ts"
       ],
       "@workspace-mfe-federation/organisms": [
         "apps/angular/libs/shared/ui/organisms/src/index.ts"
+      ],
+      "@workspace-mfe-federation/plugins/layout/*": [
+        "apps/angular/plugins/layout/*"
       ],
       "appointment/Routes": [
         "apps/angular/plugins/features/appointment/src/app/remote-entry/entry.routes.ts"
@@ -53,14 +62,7 @@
       ],
       "vetdashboard/Routes": [
         "apps/angular/plugins/dashboards/vetdashboard/src/app/remote-entry/entry.routes.ts"
-      ],
-
-      "@workspace-mfe-federation/domain/interfaces/*": [
-        "apps/angular/libs/domain/interfaces/*"
-      ],
-      "@workspace-mfe-federation/core/plugin-registry/*": [
-        "apps/angular/libs/core/plugin-registry/*"
-      ],
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

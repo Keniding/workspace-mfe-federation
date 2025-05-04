@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { FooterComponent } from '@workspace-mfe-federation/molecules';
 
 @Component({
-  imports: [CommonModule, NxWelcomeComponent],
+  imports: [CommonModule, FooterComponent],
   selector: 'app-footer-entry',
-  template: `<app-nx-welcome></app-nx-welcome>`,
+  template: `<lib-footer></lib-footer>`,
 })
 export class RemoteEntryComponent {}

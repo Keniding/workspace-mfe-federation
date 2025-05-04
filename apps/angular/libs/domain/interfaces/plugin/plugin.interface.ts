@@ -1,3 +1,5 @@
+import { Component, Type } from '@angular/core';
+
 export interface PluginManifest {
   id: string;
   name: string;
@@ -8,7 +10,8 @@ export interface PluginManifest {
   exposedComponents: {
     [key: string]: {
       type: 'component' | 'route' | 'service';
-      path: string;
+      path?: string;
+      component?: Type<Component>;
     }
   };
 }

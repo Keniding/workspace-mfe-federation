@@ -1,15 +1,12 @@
 {
-  "layout": "http://localhost:4201/mf-manifest.json",
   "header": "http://localhost:4202/mf-manifest.json",
   "footer": "http://localhost:4203/mf-manifest.json",
   "navbar": "http://localhost:4204/mf-manifest.json",
   "hero": "http://localhost:4205/mf-manifest.json",
-  "features": "http://localhost:4206/mf-manifest.json",
   "landing": "http://localhost:4207/mf-manifest.json",
   "iaconsultant": "http://localhost:4208/mf-manifest.json",
   "petprofile": "http://localhost:4209/mf-manifest.json",
   "appointment": "http://localhost:4210/mf-manifest.json",
-  "dashboards": "http://localhost:4211/mf-manifest.json",
   "vetdashboard": "http://localhost:4212/mf-manifest.json",
   "ownerdashboard": "http://localhost:4213/mf-manifest.json"
 }
