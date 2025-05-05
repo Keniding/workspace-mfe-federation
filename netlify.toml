@@ -1,5 +1,5 @@
 [build]
-command = "npm install --legacy-peer-deps && NODE_ENV=production nx build host --configuration=production"
+command = "NODE_ENV=production nx build host --configuration=production"
 publish = "dist/apps/angular/host"
 functions = "netlify/functions"
 
