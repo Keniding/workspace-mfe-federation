@@ -1,0 +1,16 @@
+<div class="field">
+  <span class="p-float-label">
+    <p-dropdown
+      [inputId]="id"
+      [options]="options"
+      [(ngModel)]="selectedItem"
+      (ngModelChange)="onSelectionChange($event)"
+      [disabled]="disabled"
+      [optionLabel]="optionLabel"
+      [optionValue]="optionValue"
+      [placeholder]="placeholder"
+      styleClass="w-full"
+    ></p-dropdown>
+    <label [for]="id">{{ label }}</label>
+  </span>
+</div>

@@ -1,0 +1,270 @@
+<div class="grid">
+  <div class="col-12">
+    <h1 class="text-3xl font-bold mb-4">Clínica Veterinaria PetCare</h1>
+    <lib-alert-card
+      title="Recordatorio de Vacunación"
+      severity="info"
+      [dismissible]="true"
+      actionLabel="Ver Calendario"
+      (dismiss)="handleAlertDismiss()"
+      (action)="navigateToVaccines()"
+    >
+      <p>Hay 5 pacientes con vacunas programadas para esta semana. Revise el calendario de vacunación.</p>
+    </lib-alert-card>
+  </div>
+
+  <div class="col-12 md:col-6 lg:col-3">
+    <lib-stats-card
+      title="Pacientes Activos"
+      value="324"
+      subtitle="Total registrados"
+      icon="pi-heart"
+      iconSeverity="danger"
+      trend="up"
+      trendValue="8%"
+      trendLabel="vs mes anterior"
+    ></lib-stats-card>
+  </div>
+
+  <div class="col-12 md:col-6 lg:col-3">
+    <lib-stats-card
+      title="Citas Hoy"
+      value="12"
+      subtitle="3 urgencias"
+      icon="pi-calendar"
+      iconSeverity="primary"
+      trend="neutral"
+      trendValue="0%"
+      trendLabel="vs ayer"
+    ></lib-stats-card>
+  </div>
+
+  <div class="col-12 md:col-6 lg:col-3">
+    <lib-stats-card
+      title="Ingresos Mensuales"
+      value="S/. 15,480"
+      subtitle="Mayo 2025"
+      icon="pi-dollar"
+      iconSeverity="success"
+      trend="up"
+      trendValue="12.5%"
+      trendLabel="vs mes anterior"
+    ></lib-stats-card>
+  </div>
+
+  <div class="col-12 md:col-6 lg:col-3">
+    <lib-stats-card
+      title="Cirugías Programadas"
+      value="8"
+      subtitle="Próximos 7 días"
+      icon="pi-heart-fill"
+      iconSeverity="warn"
+      trend="down"
+      trendValue="25%"
+      trendLabel="vs semana anterior"
+    ></lib-stats-card>
+  </div>
+
+  <div class="col-12 md:col-7">
+    <lib-list-card
+      title="Próximas Citas"
+      subtitle="Hoy, 4 de Mayo"
+      [items]="upcomingAppointments"
+      emptyMessage="No hay citas programadas para hoy"
+      footerButtonLabel="Ver Todas las Citas"
+      (footerButtonClick)="navigateToAppointments()"
+    >
+      <ng-template #itemTemplate let-appointment>
+        <div class="flex justify-content-between align-items-center">
+          <div class="flex align-items-center">
+            <i [class]="'pi ' + getAppointmentIcon(appointment.type) + ' mr-2'"
+               [style]="{ color: getAppointmentColor(appointment.type) }"></i>
+            <div>
+              <span class="font-medium">{{ appointment.petName }}</span>
+              <span class="text-sm text-gray-500 ml-2">({{ appointment.ownerName }})</span>
+              <div class="text-sm text-gray-600">{{ appointment.type }}</div>
+            </div>
+          </div>
+          <span class="text-sm font-medium">{{ appointment.time }}</span>
+        </div>
+      </ng-template>
+    </lib-list-card>
+  </div>
+
+  <div class="col-12 md:col-5">
+    <lib-profile-card
+      name="Luna"
+      description="Labrador Retriever, 3 años"
+      avatarUrl="https://picsum.photos/300/300"
+      status="Hospitalizado"
+      statusSeverity="warn"
+      primaryButtonLabel="Ver Historial"
+      secondaryButtonLabel="Contactar Dueño"
+      (primaryClick)="viewPatientHistory('P-2023-001')"
+      (secondaryClick)="contactOwner('O-2023-001')"
+    >
+      <p class="text-center">Ingresada por problemas digestivos. En observación desde 02/05/2025.</p>
+    </lib-profile-card>
+  </div>
+
+  <div class="col-12">
+    <h2 class="text-xl font-bold mb-3 mt-4">Servicios Destacados</h2>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <lib-image-card
+      title="Vacunación Completa"
+      subtitle="Protección para tu mascota"
+      imageUrl="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      imageHeight="180px"
+      badge="Popular"
+      badgeSeverity="info"
+      primaryButtonLabel="Agendar"
+      (primaryClick)="scheduleService('vaccination')"
+    >
+      <p>Programa de vacunación completo para perros y gatos de todas las edades.</p>
+    </lib-image-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <lib-image-card
+      title="Cirugía Especializada"
+      subtitle="Equipo médico avanzado"
+      imageUrl="https://picsum.photos/800/400"
+      imageHeight="180px"
+      badge="Especializado"
+      badgeSeverity="warn"
+      primaryButtonLabel="Consultar"
+      (primaryClick)="scheduleService('surgery')"
+    >
+      <p>Procedimientos quirúrgicos con equipamiento de última generación y personal especializado.</p>
+    </lib-image-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <lib-image-card
+      title="Cuidado Dental"
+      subtitle="Salud bucal completa"
+      imageUrl="https://images.unsplash.com/photo-1588776814546-daab30f310ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+      imageHeight="180px"
+      badge="Nuevo"
+      badgeSeverity="success"
+      primaryButtonLabel="Agendar"
+      (primaryClick)="scheduleService('dental')"
+    >
+      <p>Limpieza dental profesional y tratamientos para problemas bucales en mascotas.</p>
+    </lib-image-card>
+  </div>
+
+  <div class="col-12">
+    <h2 class="text-xl font-bold mb-3 mt-4">Planes de Salud</h2>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <lib-pricing-card
+      title="Plan Básico"
+      price="49.90"
+      currencySymbol="S/."
+      billingPeriod="mes"
+      description="Cuidado esencial para tu mascota"
+      [features]="[
+            'Consultas ilimitadas',
+            'Vacunas básicas',
+            'Desparasitación',
+            '10% descuento en medicamentos'
+          ]"
+      buttonLabel="Seleccionar"
+      (buttonClick)="selectPlan('basic')"
+    ></lib-pricing-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <lib-pricing-card
+      title="Plan Premium"
+      price="89.90"
+      currencySymbol="S/."
+      billingPeriod="mes"
+      description="Cuidado completo para tu mascota"
+      [features]="[
+            'Todo del plan básico',
+            'Exámenes de laboratorio',
+            'Limpieza dental anual',
+            '20% descuento en medicamentos',
+            'Urgencias 24/7'
+          ]"
+      buttonLabel="Seleccionar"
+      [featured]="true"
+      featuredText="Recomendado"
+      (buttonClick)="selectPlan('premium')"
+    ></lib-pricing-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <lib-pricing-card
+      title="Plan Senior"
+      price="119.90"
+      currencySymbol="S/."
+      billingPeriod="mes"
+      description="Cuidado especializado para mascotas mayores"
+      [features]="[
+            'Todo del plan premium',
+            'Chequeos geriátricos',
+            'Fisioterapia',
+            '30% descuento en medicamentos',
+            'Atención domiciliaria'
+          ]"
+      buttonLabel="Seleccionar"
+      (buttonClick)="selectPlan('senior')"
+    ></lib-pricing-card>
+  </div>
+
+  <!-- Formulario de Contacto Rápido -->
+  <div class="col-12 md:col-6 lg:col-8">
+    <lib-form-card
+      title="Agendar Cita Rápida"
+      submitLabel="Solicitar Cita"
+      cancelLabel="Limpiar"
+      (cardSubmit)="submitAppointmentRequest()"
+      (cardCancel)="clearAppointmentForm()"
+    >
+      <div class="grid">
+        <div class="col-12 md:col-6 mb-3">
+          <label for="petName" class="block text-sm font-medium mb-1">Nombre de Mascota</label>
+          <input id="petName" pInputText class="w-full" />
+        </div>
+        <div class="col-12 md:col-6 mb-3">
+          <label for="petTipoMascota" class="block text-sm font-medium mb-1">Tipo de Mascota</label>
+          <p-dropdown id="petTipoMascota" [options]="petTypes" optionLabel="label" styleClass="w-full"></p-dropdown>
+        </div>
+        <div class="col-12 md:col-6 mb-3">
+          <label for="petTipoServicio" class="block text-sm font-medium mb-1">Tipo de Servicio</label>
+          <p-dropdown id="petTipoServicio" [options]="serviceTypes" optionLabel="label" styleClass="w-full"></p-dropdown>
+        </div>
+        <div class="col-12 md:col-6 mb-3">
+          <label for="fecha" class="block text-sm font-medium mb-1">Fecha Preferida</label>
+          <p-calendar id="fecha" styleClass="w-full"></p-calendar>
+        </div>
+        <div class="col-12 mb-3">
+          <label for="nota" class="block text-sm font-medium mb-1">Notas Adicionales</label>
+          <textarea id="nota" pInputTextarea rows="3" class="w-full"></textarea>
+        </div>
+      </div>
+    </lib-form-card>
+  </div>
+
+  <!-- Emergencias -->
+  <div class="col-12 md:col-6 lg:col-4">
+    <lib-alert-card
+      title="Servicio de Emergencias 24/7"
+      severity="danger"
+      actionLabel="Llamar Ahora"
+      (action)="callEmergency()"
+    >
+      <div class="text-center mb-3">
+        <i class="pi pi-phone text-5xl"></i>
+      </div>
+      <p class="text-center font-medium text-lg mb-2">(01) 555-PETSOS</p>
+      <p class="text-center">Atención inmediata para emergencias veterinarias las 24 horas, todos los días.</p>
+    </lib-alert-card>
+  </div>
+</div>

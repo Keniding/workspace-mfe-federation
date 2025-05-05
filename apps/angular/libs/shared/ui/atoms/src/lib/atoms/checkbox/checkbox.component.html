@@ -1,0 +1,10 @@
+<div class="flex align-items-center">
+  <p-checkbox
+    [inputId]="id"
+    [binary]="true"
+    [(ngModel)]="checked"
+    (ngModelChange)="onModelChange($event)"
+    [disabled]="disabled"
+  ></p-checkbox>
+  <label [for]="id" class="ml-2 cursor-pointer">{{ label }}</label>
+</div>

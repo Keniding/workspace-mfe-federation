@@ -1,0 +1,38 @@
+<p-card [style]="{ width: '100%' }">
+  <ng-template pTemplate="header" *ngIf="imageUrl">
+    <img alt=""
+      [src]="imageUrl"
+      [alt]="imageAlt || title"
+      class="w-full object-cover"
+      [style]="{ height: imageHeight }">
+  </ng-template>
+
+  <div *ngIf="badge" class="mb-3">
+    <lib-badge
+      [value]="badge"
+      [severity]="badgeSeverity">
+    </lib-badge>
+  </div>
+
+  <h3 *ngIf="title" class="text-xl font-semibold mt-0 mb-2">{{ title }}</h3>
+  <p *ngIf="subtitle" class="text-sm text-gray-600 mt-0 mb-3">{{ subtitle }}</p>
+
+  <ng-content></ng-content>
+
+  <ng-template pTemplate="footer" *ngIf="showFooter">
+    <div class="flex justify-content-end gap-2">
+      <lib-button
+        *ngIf="secondaryButtonLabel"
+        [label]="secondaryButtonLabel"
+        [severity]="'secondary'"
+        (clickButton)="secondaryClick.emit($event)"
+      ></lib-button>
+      <lib-button
+        *ngIf="primaryButtonLabel"
+        [label]="primaryButtonLabel"
+        [severity]="primaryButtonSeverity"
+        (clickButton)="primaryClick.emit($event)"
+      ></lib-button>
+    </div>
+  </ng-template>
+</p-card>

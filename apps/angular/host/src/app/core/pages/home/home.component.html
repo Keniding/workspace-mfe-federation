@@ -1,0 +1,11 @@
+<ng-container *ngIf="headerComponent$ | async as header">
+  <ng-container *ngComponentOutlet="header"></ng-container>
+</ng-container>
+
+<ng-container *ngIf="navbarComponent$ | async as navbar">
+  <ng-container *ngComponentOutlet="navbar"></ng-container>
+</ng-container>
+
+<ng-container *ngIf="footerComponent$ | async as footer">
+  <ng-container *ngComponentOutlet="footer"></ng-container>
+</ng-container>

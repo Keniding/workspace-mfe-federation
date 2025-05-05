@@ -1,0 +1,27 @@
+<p-card [ngClass]="'alert-card ' + severity" [style]="{ width: '100%' }">
+  <div class="flex align-items-start">
+    <i [class]="'pi ' + getIcon() + ' mr-3 mt-1'" style="font-size: 1.2rem;"></i>
+    <div class="flex-grow-1">
+      <h3 *ngIf="title" class="m-0 mb-2 font-medium">{{ title }}</h3>
+      <div>
+        <ng-content></ng-content>
+      </div>
+    </div>
+    <button *ngIf="dismissible"
+            class="p-0 border-0 bg-transparent cursor-pointer"
+            aria-label="Cerrar"
+            (click)="dismiss.emit()">
+      <i class="pi pi-times ml-3 mt-1"></i>
+    </button>
+  </div>
+
+  <ng-template pTemplate="footer" *ngIf="actionLabel">
+    <div class="flex justify-content-end">
+      <lib-button
+        [label]="actionLabel"
+        [severity]="getButtonSeverity()"
+        (clickButton)="action.emit($event)"
+      ></lib-button>
+    </div>
+  </ng-template>
+</p-card>

@@ -1,0 +1,30 @@
+<p-card [header]="title" [subheader]="subtitle" [style]="{ width: '100%' }">
+  <div class="list-container">
+    <ng-container *ngIf="items.length > 0; else emptyTpl">
+      <div *ngFor="let item of items; let i = index" class="list-item" [ngClass]="{'border-bottom-1 border-300': i !== items.length - 1}">
+        <ng-container *ngIf="itemTemplate; else defaultItemTpl">
+          <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item, index: i}"></ng-container>
+        </ng-container>
+        <ng-template #defaultItemTpl>
+          {{ item }}
+        </ng-template>
+      </div>
+    </ng-container>
+
+    <ng-template #emptyTpl>
+      <div class="empty-message">
+        {{ emptyMessage }}
+      </div>
+    </ng-template>
+  </div>
+
+  <ng-template pTemplate="footer" *ngIf="footerButtonLabel">
+    <div class="flex justify-content-center">
+      <lib-button
+        [label]="footerButtonLabel"
+        [severity]="footerButtonSeverity"
+        (clickButton)="footerButtonClick.emit($event)"
+      ></lib-button>
+    </div>
+  </ng-template>
+</p-card>

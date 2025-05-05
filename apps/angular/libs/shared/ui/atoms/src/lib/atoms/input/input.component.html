@@ -1,0 +1,12 @@
+<span class="p-float-label w-full">
+  <input
+    [id]="id"
+    type="text"
+    pInputText
+    [(ngModel)]="value"
+    (ngModelChange)="onInputChange($event)"
+    [disabled]="disabled"
+    class="w-full"
+  />
+  <label [for]="id">{{ label }}</label>
+</span>
