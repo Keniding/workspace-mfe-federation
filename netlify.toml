@@ -2,6 +2,9 @@
 command = "nx run-many --target=build --all --prod"
 publish = "dist/apps/angular/host"
 
+[build.environment]
+NODE_ENV = "production"
+
 [[redirects]]
 from = "/module-federation.manifest.json"
 to = "/module-federation.manifest.json"
