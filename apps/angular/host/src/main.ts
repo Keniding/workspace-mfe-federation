@@ -1,9 +1,10 @@
 import { init } from '@module-federation/enhanced/runtime';
-
 import { enableProdMode } from '@angular/core';
+import { environment } from './environments/environment';
 
-enableProdMode();
-
+if (environment.production) {
+  enableProdMode();
+}
 fetch('/module-federation.manifest.json')
   .then((res) => res.json())
   .then((remotes: Record<string, string>) =>
