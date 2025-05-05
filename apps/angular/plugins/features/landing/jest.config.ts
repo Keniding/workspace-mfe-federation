@@ -1,9 +1,9 @@
 export default {
   displayName: 'landing',
-  preset: '../../../../../../../jest.preset.js',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory:
-    '../../../../../../../coverage/apps/angular/plugins/features/landing',
+    '../../../../../coverage/apps/angular/plugins/features/landing',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

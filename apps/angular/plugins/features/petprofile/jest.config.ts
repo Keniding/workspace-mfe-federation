@@ -1,9 +1,9 @@
 export default {
   displayName: 'petprofile',
-  preset: '../../../../../../../jest.preset.js',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory:
-    '../../../../../../../coverage/apps/angular/plugins/features/petprofile',
+    '../../../../../coverage/apps/angular/plugins/features/petprofile',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

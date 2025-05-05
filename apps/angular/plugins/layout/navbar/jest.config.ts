@@ -1,9 +1,9 @@
 export default {
   displayName: 'navbar',
-  preset: '../../../../../../../jest.preset.js',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory:
-    '../../../../../../../coverage/apps/angular/plugins/layout/navbar',
+    '../../../../../coverage/apps/angular/plugins/layout/navbar',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

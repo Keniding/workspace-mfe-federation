@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DropdownComponent } from './dropdown.component';
+import { DropdownOption } from './dropdown.interface';
 
 describe('DropdownComponent', () => {
   let component: DropdownComponent;
@@ -10,7 +11,7 @@ describe('DropdownComponent', () => {
       imports: [DropdownComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DropdownComponent);
+    fixture = TestBed.createComponent(DropdownComponent<DropdownOption>);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

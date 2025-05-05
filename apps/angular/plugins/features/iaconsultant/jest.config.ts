@@ -1,9 +1,9 @@
 export default {
   displayName: 'iaconsultant',
-  preset: '../../../../../../../jest.preset.js',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory:
-    '../../../../../../../coverage/apps/angular/plugins/features/iaconsultant',
+    '../../../../../coverage/apps/angular/plugins/features/iaconsultant',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

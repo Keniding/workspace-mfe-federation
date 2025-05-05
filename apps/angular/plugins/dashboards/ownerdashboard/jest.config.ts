@@ -1,9 +1,9 @@
 export default {
   displayName: 'ownerdashboard',
-  preset: '../../../../../../../jest.preset.js',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory:
-    '../../../../../../../coverage/apps/angular/plugins/dashboards/ownerdashboard',
+    '../../../../../coverage/apps/angular/plugins/dashboards/ownerdashboard',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

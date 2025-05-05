@@ -1,9 +1,9 @@
 export default {
   displayName: 'header',
-  preset: '../../../../../../../jest.preset.js',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory:
-    '../../../../../../../coverage/apps/angular/plugins/layout/src/app/header',
+    '../../../../../coverage/apps/angular/plugins/layout/src/app/header',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

@@ -1,9 +1,9 @@
 export default {
   displayName: 'appointment',
-  preset: '../../../../../../../jest.preset.js',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory:
-    '../../../../../../../coverage/apps/angular/plugins/features/appointment',
+    '../../../../../coverage/apps/angular/plugins/features/appointment',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

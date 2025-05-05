@@ -1,9 +1,9 @@
 export default {
   displayName: 'hero',
-  preset: '../../../../../../../jest.preset.js',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory:
-    '../../../../../../../coverage/apps/angular/plugins/layout/hero',
+    '../../../../../coverage/apps/angular/plugins/layout/hero',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
