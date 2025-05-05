@@ -1,7 +1,6 @@
 [build]
-command = "nx build host --configuration=production"
+command = "nx run-many --target=build --all --prod"
 publish = "dist/apps/angular/host"
-functions = "netlify/functions"
 
 [build.environment]
 NODE_ENV = "production"
