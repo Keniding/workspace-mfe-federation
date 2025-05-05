@@ -1,10 +1,12 @@
 [build]
-command = "nx build host --configuration=production"
+command = "NODE_ENV=production nx build host --configuration=production"
 publish = "dist/apps/angular/host"
 functions = "netlify/functions"
 
 [build.environment]
 NODE_ENV = "production"
+NX_PRODUCTION = "true"
+NPM_FLAGS = "--legacy-peer-deps"
 
 [[redirects]]
 from = "/module-federation.manifest.json"
