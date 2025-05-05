@@ -1,0 +1,29 @@
+[build]
+command = "nx run-many --target=build --all --prod"
+publish = "dist/apps/angular/host"
+
+[[redirects]]
+from = "/module-federation.manifest.json"
+to = "/module-federation.manifest.json"
+status = 200
+
+[[redirects]]
+from = "/remoteEntry.mjs"
+to = "/remoteEntry.mjs"
+status = 200
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[[headers]]
+for = "/*.(js|mjs)"
+[headers.values]
+Content-Type = "application/javascript"
+
+[[headers]]
+for = "/*.json"
+[headers.values]
+Content-Type = "application/json"
+Access-Control-Allow-Origin = "*"
